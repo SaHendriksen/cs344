@@ -1,0 +1,26 @@
+Sarah Hendriksen
+CS 344
+Lab 02
+
+Exercise 2.1
+a) hill-climbing and simulated annealing algorithms both solve the problem
+b) hill-climbing has a quicker algorithm
+c) it changes the speed somewhat for the different algorithms, but the hill-climbing algorithm is still faster
+d) there doesn't appear to be any changes caused by manipulating the delta value
+e) it is the scheduling feature that determines the lambda that will be used and helps determine the likelihood that a jump will be made
+
+Exercise 2.2
+a) it depends on what x value they start at - based on the algorithm they climb or jump to another local maximum which may not be the overall maximum in that interval; however, simulated annealing and initial give the same value because they don't have the limiting factor of only getting better (they can get worse before getting better)
+b) it depends on what x they start at if they get the correct maximum value
+c) there doesn't seem to be any changes caused by manipulating the delta value
+d) for x values for the maximums/minimums the values shouldn't go under 0 or over 30 - wasn't exactly  sure what this question was asking for...
+
+Exercise 2.3
+a) the restarts give an average around 15 which isn't surprising because it is about the average of the local maxes
+b) Initial: 16.73, Hill: 24.211, Anneal: 17.08
+c) it depends on the initial value of x; if the x value falls within the right interval (a higher one), hill climbing will be better because it won't leave that local maximum, however the other two algorithms do better when the x value starts lower because they can move to a higher local maximum
+
+Exercise 2.4
+a) it makes most sense combined with hill search because it allows hill search to move between different local maximums but also still only choose a value if it is better than its current value
+b) you would need to find an amount that both gave a wide range of options (not really limited by the amount of space you have because it is a local search), but also doesn't get too broad that it slows down the search too much
+c) you would take your current x value and run the code for a range of values and only keep the best result from that range, then compare to your current result and if it is better move forward with that result instead
