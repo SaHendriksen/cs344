@@ -1,0 +1,47 @@
+Sarah Hendriksen
+CS 344
+Lab 03
+
+Exercise 3.1
+a)          [DFS]   [AC3]   [BackT]    [MinC]
+  [solved]  yes     yes     yes         yes
+  [easy]    fail    fast    slower      fail
+  [harder]  fail    fail    fail        fail
+  [hardest] fail    fail    fail        fail
+
+  Explanation:
+  For the solved and easiest puzzle AC3 and back tracking were both able to solve the Sudoku. AC3 is able to solve the
+  puzzle because it easily can find the situations that fit the parameters through comparison. It fails on higher levels
+  because it is unable to compare more than two things - you would need the path to know if it succeeds. Backtracking
+  works on lower levels because it incrementally builds towards a solution. It fails on higher levels because the
+  algorithm would assume potential steps towards the solutions as invalid steps (too many variables at play) and would
+  abandon them too soon.
+  Depth first search doesn't work in any of the scenarios because it enters a branch that has too many possibilities
+  for solutions and wouldn't ever reach the branch that has a valid solution. Minimum conflicts fails because in order
+  to solve the solution you may have to make it worse or the same level of incorrectness before the solution is found.
+
+
+b) i) it is able to find a solution but it takes a very long time
+   ii) it is able to find the solution very quickly for all the different difficulties
+
+   Forward-checking combined with back-tracking search gives the best results
+
+Exercise 3.2
+a) AC3 doesn't work for any value n; backtracking and min conflicts work for very large n values however backtracking
+    becomes very slow
+b) backtracking with forward checking and mrv works significantly faster for large values of n; mrv is more likely to
+    cause failure first when searching through a branch
+c) because it is a random conflicted variable that is being changed there is a wide range of steps that it could take
+    it depends on the random variable that is chosen to be swapped
+
+Exercise 3.3
+a) Between CSP and traditional search problems, they are similar in their goal tests - that you need a solution that
+    meets all the constraints at the end - and your actions are probably similar - swapping numbers or moving queens,
+    for example. States, domains, and results of moves are differnt in CSP in the fact that it is possible/allowed to
+    have invalid states as results because you are moving towards a solution. You are often testing how close your
+    result has gotten you to the actual goal test - for example, how many queens conflict. Traditional search problems
+    don't allow for that.
+b) Traditional searches tend to look soley for valid steps/solutions in a problem. Constraint-based problem solving
+    uses the restrictions it has to rule out future possibilities and abandon tracks that may lead to bad results.
+    However, you can make backtracks and "worse" moves if it progresses you faster towards a solution than other steps
+    would.
