@@ -1,0 +1,24 @@
+Exercise 4.3
+
+a)
+    i) P(User) = .089
+    ii) P(test | user) = .99
+    iii) P(-test | user) = .01
+    iv) P(test | -user) = .02
+    v) P(User | test) = P(test | user) * P(user) / P(test)
+                      = P(test | user) * P(user) / ( P(test | user) * P(user) + P(test | -user) * P(-user) )
+                      = .99 * .089 / (.99 * .089 + .02 * .911)
+                      = .829
+
+b)
+    P(c) = .01
+    P(test | c) = .80
+    P(test | -c) = .096
+
+    P(c | test) = P(test | c) * P(c) / P(test)
+                = P(test | c) * P(c) / ( P(test | c) * P(c) + P(test | -c) * P(-c) )
+                = .80 * .01 / (.80 * .01 + .096 * .99)
+                = .0776
+
+    Probability of having cancer given a positive test: .0776
+    Probability of not having cancer given a positive test: .9224
