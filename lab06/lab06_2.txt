@@ -1,0 +1,14 @@
+Sarah Hendriksen
+(Partner: Sameer Mall)
+CS 344
+Lab06 - Exercise 6.2
+
+Remainder(Hungry?) = 7/12 * E(Hungry) + 5/12 * E(Not Hungry)
+                   = 7/12 * -( 2 * (1/2) * log2( 1/2 ) ) + 5/12 * -( 2 * (1/2) * log2( 1/2 ) )
+                   = 7/12 * 1 + 5/12 * 1
+                   = 1
+Information Gained (Hungry?) = 1 - 1 = 0
+
+Compared to the ones we did in class, Hungry? is like Type? where it doesn't give you any new information (yes or no on
+if you will eat there or not), instead it just divides them up further. Patrons? on the other hand remains the best
+indicator of if you will stay and eat or not given the examples we have done so far.

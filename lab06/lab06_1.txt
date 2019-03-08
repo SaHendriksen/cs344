@@ -1,7 +1,7 @@
 Sarah Hendriksen
 (Partner: Sameer Mall)
 CS 344
-Lab06
+Lab06 - Exercise 6.1
 
 EMAIL FILTER
 
@@ -30,10 +30,14 @@ worthwhile to the user in the future.
 indicated by one of two classes - { worthwhile, spam/clutter } - when it is just received.
 (This is already a binary classification)
 
-8) Title                            | Sender            | Documents Attached | Links | Question Marks | Output
+8) Subject                          | Sender            | Documents Attached | Links | Output
   --------------------------------------------------------------------------------------------------------------------
-   Course Registration              | Registrar         | 1                  | 2     | 3              | Worthwhile
+   Course Registration              | Registrar         | 1                  | 2     | Worthwhile
   --------------------------------------------------------------------------------------------------------------------
-   Free Cruise to Bahamas           | FreeCruise.net    | 0                  | 10    | 20             | Spam/Clutter
+   Free Cruise to Bahamas           | FreeCruise.net    | 0                  | 10    | Spam/Clutter
 
-9) We applied the labels { worthwhile, spam/clutter } to each email that was received.
+9) We applied the labels { worthwhile, spam/clutter } to each email that was received. This was determined by the
+number of elements that would prompt user response - attached documents, links within the text, or if the sender has
+been responded to in the past.
+
+10) Sender, Number of attached documents
