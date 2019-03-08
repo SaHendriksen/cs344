@@ -1,0 +1,39 @@
+Sarah Hendriksen
+(Partner: Sameer Mall)
+CS 344
+Lab06
+
+EMAIL FILTER
+
+1) We want the ML model to predict how likely an email just received is important for the user.
+
+2) Our ideal outcome is to separate emails that are worth the user's time and attention from those that are spam or
+clutter to the inbox.
+
+3) A success metric is the number of worthwhile emails predicted by the model (ones users have responded to). Success
+means predicting 95% of the important emails that a user responds to (i.e., clicked on documents, links, responded to,
+etc.) and ignoring the spam emails. Failure means the number of important emails indicated is no better than the current
+heuristics.
+
+4) We want the model to output a prediction of whether the email is worthwhile. The ideal outcome is these predictions
+would indicate which emails a user should pay attention to. We can obtain examples for training data by giving the
+model previous examples of emails that users have responded to and ones they have ignored (deemed not worthwhile). These
+would be labeled worthwhile or spam/clutter.
+
+5) We'll predict an email's worthwhile-ness when the email is received in real time. The outcome will help determine the
+the categorization of the email.
+
+6) Consider previous emails the user has received and responded to. Assume that emails from this sender will also be
+worthwhile to the user in the future.
+
+7) Our problem is best framed as a binary classification, which predicts whether an email will be worthwhile to a user
+indicated by one of two classes - { worthwhile, spam/clutter } - when it is just received.
+(This is already a binary classification)
+
+8) Title                            | Sender            | Documents Attached | Links | Question Marks | Output
+  --------------------------------------------------------------------------------------------------------------------
+   Course Registration              | Registrar         | 1                  | 2     | 3              | Worthwhile
+  --------------------------------------------------------------------------------------------------------------------
+   Free Cruise to Bahamas           | FreeCruise.net    | 0                  | 10    | 20             | Spam/Clutter
+
+9) We applied the labels { worthwhile, spam/clutter } to each email that was received.
