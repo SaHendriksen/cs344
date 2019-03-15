@@ -1,0 +1,44 @@
+Sarah Hendriksen
+CS 344
+Lab 07.3
+
+Exercise 7.3
+
+a)
+Task 1:
+    california_housing_dataframe["rooms_per_person"] = (
+    california_housing_dataframe["total_rooms"] / california_housing_dataframe["population"])
+
+    calibration_data = train_model(
+        learning_rate=0.04,
+        steps=500,
+        batch_size=5,
+        input_feature="rooms_per_person"
+    )
+    Final RMSE (on training data): 130.65
+
+Task 2:
+    plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+    While most points are in a line, there are a few outliers. The histogram shown using rooms_per_person indicates that
+    there are data points that are outliers and aren't found in the first few columns.
+
+Task 3:
+    california_housing_dataframe["rooms_per_person"] = (
+    california_housing_dataframe["rooms_per_person"]).apply(lambda x: min(x, 5))
+    _ = california_housing_dataframe["rooms_per_person"].hist()
+    calibration_data = train_model(
+        learning_rate=0.04,
+        steps=500,
+        batch_size=5,
+        input_feature="rooms_per_person"
+    )
+    Final RMSE (on training data): 110.34
+    _ = plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+
+b) It allows you to obtain information (like ratios done in the tasks) from the information you currently have and work
+with those values instead. It essentially adds another data column to your DataFrame.
+
+c) Outliers are data points that don't fit the general trend of the data. Normally they are clipped or removed from the
+data set because they can throw off the learning because they are non-normal data pieces and you want to have the
+learning done with how things normally will occur.
+

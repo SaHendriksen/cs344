@@ -1,0 +1,68 @@
+Sarah Hendriksen
+CS 344
+Lab 07.4
+
+Exercise 7.4
+
+a)
+Task 1:
+    Income isn't on a specified scale - so we have to assume the small values refer to some larger values. We could do
+    a quick Google search and see if we can see if it is potentially a factor of 1000 or 10000 too small?
+    The maximum house value seems to be a strange number that could be just a cap that is placed on that value.
+    There are some abnormally large values in rooms_per_person given that most of the values are around 2 up until the
+    75% value so there could be some incorrect/corrupted data.
+
+Task 2:
+    The longitudes don't have similar values within the longitudes - this means that there is a fault in the way we
+    split the data for train and validation. The training data seems to have had more of the southern values and the
+    validation had the more northern longitude values.
+
+Task 3:
+    After adding the randomization in, the plots that are returned are similar in shape with the training data just
+    having more data points. Randomization fixed the problem we were having in Task 2.
+
+Task 4:
+    training_predictions = linear_regressor.predict(input_fn=predict_training_input_fn)
+    training_predictions = np.array([item['predictions'][0] for item in training_predictions])
+    validation_predictions = linear_regressor.predict(input_fn=predict_validation_input_fn)
+    validation_predictions = np.array([item['predictions'][0] for item in validation_predictions])
+    linear_regressor = train_model(
+        learning_rate=0.00003,
+        steps=500,
+        batch_size=5,
+        training_examples=training_examples,
+        training_targets=training_targets,
+        validation_examples=validation_examples,
+        validation_targets=validation_targets
+    )
+
+Task 5:
+    california_housing_test_data = pd.read_csv("https://download.mlcc.google.com/mledu-datasets/california_housing_test.csv", sep=",")
+    test_examples = preprocess_features(california_housing_test_data)
+    test_targets = preprocess_targets(california_housing_test_data)
+
+    predict_test_input_fn = lambda: my_input_fn(
+          test_examples,
+          test_targets["median_house_value"],
+          num_epochs=1,
+          shuffle=False)
+
+    test_predictions = linear_regressor.predict(input_fn=predict_test_input_fn)
+    test_predictions = np.array([item['predictions'][0] for item in test_predictions])
+
+    root_mean_squared_error = math.sqrt(
+        metrics.mean_squared_error(test_predictions, test_targets))
+
+    print("Final RMSE (on test data): %0.2f" % root_mean_squared_error)
+    Final RMSE (on test data): 163.16
+
+    The end of the validation data curve is near 163 which means that the generalization performance of the model is
+    good - it got similar values for another data set which means that it works beyond just the data set we were working
+    with to train it.
+
+b)  I learned that you need to check to make sure that the training and validation data sets are similar - that you have
+a random distribution of the data rather than data that is split in one way or another (as we saw with the longitude).
+This is because it will throw off the learning of our model. It is also important to compare the validation set value
+with another data set that you haven't been using to train the model. This is because if you use the same data set to
+train and validate, you could just be fitting a model that only works for that data set. In order to tell if the model
+can be generalized, you need to run it against another test data set.

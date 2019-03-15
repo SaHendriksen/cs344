@@ -1,0 +1,19 @@
+Sarah Hendriksen
+CS 344
+Lab 07.1
+
+Exercise 7.1
+
+a)
+Exercise 1
+    cities['Area greater than 50 sq miles and named after saint'] = (cities['Area square miles'] > 50)
+        & cities['City name'].apply(lambda name: name.startswith('San'))
+    cities
+Exercise 2
+    cities.reindex([0, 5, 10, 3, 1])
+    This is useful because it allows strings that are used as indexes in actual data. It makes it easy when reindexing
+        an external list to allow for missing indices.
+
+b) Because it allows for reindexing with missing indices which isn't uncommon in actual data.
+
+c) It allows you to randomize the data in your DataFrame.

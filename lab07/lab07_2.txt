@@ -1,0 +1,32 @@
+Sarah Hendriksen
+CS 344
+Lab 07.2
+
+Exercise 7.2
+
+a) Categorical means giving a label to a piece of data (normally has a set number of options). Numerical means giving
+it a number. Categorical can be grouped but not ordered (unless individual categories are given values too).
+
+b)
+Task 1:
+    train_model(
+        learning_rate=0.00001,
+        steps=1000,
+        batch_size=1
+    )
+    Final RMSE (on training data): 167.75
+
+Task 2:
+    train_model(
+        learning_rate=0.00002,
+        steps=1000,
+        batch_size=1,
+        input_feature="population"
+    )
+   Final RMSE (on training data): 176.12
+
+c) The hyperparameters are data dependent so there aren't any set rules as to how to train them. There are however a
+few things to help guide: trainly should steadily decrease and plateau as training converges; run it longer if it hasn't
+converged; increasing learning rate can help it decrease faster if it is going too slowly (but too high and the same
+thing will happen); if errors vary wildly you need to decrease the learning rate; very small batch sizes can cause
+instability so start with larger values and then decrease until you see degradation.
