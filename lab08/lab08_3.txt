@@ -1,0 +1,23 @@
+Sarah Hendriksen
+Lab 08
+Exercise 8.3
+
+a) Seaborn is complimentary to Matplotlib and specifically targets statistical data visualization. Seaborn however
+extends Matplotlib and can fix two issues that can occur with Matplotlib - default Matplotlib parameters and plotting
+functions not being able to operate on DataFrames and arrays that contain a whole dataset.
+
+b) There are 397 entries in this data set with the aim of predicting fuel efficiency of cars in the late-1970s early
+1980s. I think this is a big enough data set given that the years range from 1970-1982. THe other features also have a
+wide range so I think that this is a large enough dataset.
+
+c) It normalizes features that use different scales and ranges which increases the likelihood that the model will
+converge. Without normalization training becomes more difficult and it makes the resulting model dependent on the
+choice of units used in the input.
+
+d) No it isn't a linear regression model because on the individual layers in the model it uses ReLu which isn't a linear
+model. ReLu allows for non-linear models.
+
+e) I would agree, because by having more hidden layers you increase the likelihood of training your model specifically
+for the data set that you are training it with and testing it against. It decreases the likelihood that if you were to
+run it against a validation set that you would get good results. By having less layers you reduce the chance that you
+will over generalize to your training data.

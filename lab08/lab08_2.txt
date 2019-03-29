@@ -1,0 +1,42 @@
+Sarah Hendriksen
+Lab 08
+Exercise 8.2
+
+a) FTRL is beneficial because the algorithm scales the learning rate differently for different coefficients. This is
+useful when some features rarely take non-zero values.
+
+b) By using bucketing or binning as a pre-processing technique on data it reduces the effects of minor observation
+errors. It is a way to group a number of more or less continuous values into a smaller number of bins.
+
+c)
+Task 1:
+  bucketized_latitude = tf.feature_column.bucketized_column(
+    latitude, boundaries=get_quantile_based_boundaries(
+      training_examples["latitude"], 10))
+
+  bucketized_housing_median_age = tf.feature_column.bucketized_column(
+    housing_median_age, boundaries=get_quantile_based_boundaries(
+      training_examples["housing_median_age"], 10))
+
+  bucketized_median_income = tf.feature_column.bucketized_column(
+    median_income, boundaries=get_quantile_based_boundaries(
+      training_examples["median_income"], 10))
+
+  bucketized_rooms_per_person = tf.feature_column.bucketized_column(
+    rooms_per_person, boundaries=get_quantile_based_boundaries(
+      training_examples["rooms_per_person"], 10))
+
+  Final RMSE value: 88.26
+
+  Yes, because it reduces the discrepancies that could occur in the data which could impact the training of the model.
+  By bucketing the data this is less of an issue and the model will be trained better.
+
+Task 2:
+  long_x_lat = tf.feature_column.crossed_column(
+  set([bucketized_longitude, bucketized_latitude]), hash_bucket_size=1000)
+
+  RMSE Final value: 79.95
+
+  The cross of latitude and longitude is useful because it represents a certain city block. This allows city blocks that
+  are more likely to be more expensive than others and is a stronger signal for house value than each of the features
+  considered separately.
