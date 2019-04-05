@@ -1,0 +1,30 @@
+Sarah Hendriksen
+Lab 09
+Exercise 9.1
+
+a) Linear regression is effective in solving this problem. The linear regression model uses labels with values in the
+set of {0,1} and tries to predict a continuous value that is as close as possible to 0 or 1. It will also give an output
+that can be interpreted as a probability so we want it to be in the range of 0 to 1. The final RMSE value is .44 which
+is below the .5 threshold which is applied for determining the label. The value is also between 0 and 1 which means that
+we can interpret it as a probability like we wanted to. Also the validation data seems to have a similar path to that of
+the training data.
+
+b) The big difference between L2 Loss and LogLoss is how much they penalize misclassifications. L2 Loss doesn't do a
+great job of penalizing when the output is interpreted as a probability - doesn't strongly differentiate incorrect
+cases. LogLoss on the other hand penalizes "confidence errors" more heavily.
+
+c) LogLoss appears to be doing worse than linear regression and has a final LogLoss value of .53.
+
+d) After trying a few different values that weren't successful in achieving better AUCs and Accuracies, I tried their
+linear classifier model that they trained and achieved an AUC on the validation set of .81 and Accuracy on the
+validation set of .79. This was significantly better than the initial model they gave.
+
+Their linear classifier:
+    linear_classifier = train_linear_classifier_model(
+        learning_rate=0.000003,
+        steps=20000,
+        batch_size=500,
+        training_examples=training_examples,
+        training_targets=training_targets,
+        validation_examples=validation_examples,
+        validation_targets=validation_targets)

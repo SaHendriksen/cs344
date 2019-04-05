@@ -1,0 +1,23 @@
+Sarah Hendriksen
+Lab 09
+Exercise 9.3
+
+a)  i) It contains 25,000 images
+   ii) It is similar except it does a convnet of 16, 32, and then 64. While the one we did in class did 32 twice.
+  iii) At the start of the representations we have the raw pixel images but as we go further in the representations
+        they become more and more abstract and compact. The representations carry less information about the original
+        pixels in the image and more refined information about the class of the image.
+
+b) i) Data augmentation is artificially boosting the diversity and number of training examples by performing random
+        transformations to existing images to create a set of new variants
+  ii) Epoch 30/30
+        50/50 [==============================] - 5s 96ms/step - loss: 0.5098 - acc: 0.7440
+         - 20s - loss: 0.5365 - acc: 0.7455 - val_loss: 0.5098 - val_acc: 0.7440
+
+        history = model.fit_generator(
+          train_generator,
+          steps_per_epoch=100,
+          epochs=30,
+          validation_data=validation_generator,
+          validation_steps=50,
+          verbose=2)

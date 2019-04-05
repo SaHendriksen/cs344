@@ -1,0 +1,14 @@
+Sarah Hendriksen
+Lab 09
+Exercise 9.2
+
+a) It reduces the complexity and encourages the weights to be exactly zero. For linear models like regression, having a
+zero weight is equivalent to not using the feature corresponding to that weight at all. Also besides avoiding
+overfitting, the model will be more efficient. L1 regularization is a good way to increase sparsity.
+
+b) L1 always uses the same penalty regardless of the quantity being penalized. Because of this, L1 encourages sparsity
+because even as elements more closer towards zero, the same penalty value is applied. This increases the likelihood of
+obtaining a wight of 0.
+
+c) After trying a few values for the regularization strength including .2 which yielded a final LogLoss size of .25 and
+Model size of 713. I tried their solution which returned a regularization strength of .1 and Model size of 735.
