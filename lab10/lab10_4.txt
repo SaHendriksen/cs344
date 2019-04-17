@@ -1,0 +1,36 @@
+Sarah Hendriksen
+CS 344
+Lab 10
+Exercise 10.4
+
+a) If the problem has a small data set, a linear model can be faster than a deep neural network. In order to make use or
+optimize the hidden layers in a deep neural network, you need lots of data.
+
+b) In training the linear model performed better than the deep neural network with an accuracy of .78844 compared to
+DNN's of .6. However, on the test set, the DNN had an accuracy of .8 while the linear model had an accuracy of .78396.
+
+c) Embedding performed similar to that of the linear model with a training set accuracy of .78388 and a test set
+accuracy of .7812. Embeddings work in this situation because there is a small data input and its able to return a
+lower-dimensional dense vector as an output.
+
+d) Horrible and terrible have similar embeddings in this model. This makes sense because they mean very similar things
+and can be used almost interchangeably so it would be logically that they would indicate similar sentiments.
+
+e) classifier.train(
+      input_fn=lambda: _input_fn([train_path]),
+      steps=1000)
+
+    evaluation_metrics = classifier.evaluate(
+      input_fn=lambda: _input_fn([train_path]),
+      steps=1000)
+    print("Training set metrics:")
+    for m in evaluation_metrics:
+      print(m, evaluation_metrics[m])
+    print("---")
+
+    evaluation_metrics = classifier.evaluate(
+      input_fn=lambda: _input_fn([test_path]),
+      steps=1000)
+
+    Training set accuracy: .82756
+    Test set accuracy: .80756
