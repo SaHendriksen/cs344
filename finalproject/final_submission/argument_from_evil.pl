@@ -1,4 +1,8 @@
-% THE ARGUMENT FROM EVIL
+% argument_from_evil.pl
+% Implements in Prolog the counter argument for God's existence based on the existence of evil
+%
+% Author: Sarah Hendriksen (srh34) for CS 344 at Calvin College
+% Date: May, 2019
 
 % God is omnipotent: all-powerful, omniscient: all-knowing, and omnibenevolent.
 omnipotent(god).

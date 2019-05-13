@@ -1,3 +1,9 @@
+% anselms_proof_of_god.pl
+% Implements in Prolog the Anselm's ontological proof for the existence of God
+%
+% Author: Sarah Hendriksen (srh34) for CS 344 at Calvin College
+% Date: May, 2019
+
 % The unbeliever says, "No God"
 unbeliever.
 saysNoGod :- unbeliever.

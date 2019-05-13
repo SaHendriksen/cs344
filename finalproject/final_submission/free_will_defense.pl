@@ -1,4 +1,12 @@
-% THE ARGUMENT FROM EVIL
+% free_will_defense.pl
+% Implements in Prolog the defense against The Argument from Evil by adding statements made by the Free Will Defense
+% 		which show how evil and a good God can both exist
+%
+% Author: Sarah Hendriksen (srh34) for CS 344 at Calvin College
+% Date: May, 2019
+
+
+% The Argument from Evil - also implemented in argument_from_evil.pl
 
 % God is omnipotent: all-powerful, omniscient: all-knowing, and omnibenevolent.
 omnipotent(god).
@@ -29,7 +37,9 @@ evil.
 % Therefore, God does not exist.
 god :- \+ evil.
 
-% FREE WILL DEFENSE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FREE WILL DEFENSE %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % God is good.
 allGood(god).
